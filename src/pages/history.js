@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Box, Content, Title, Notification } from "bloomer";
+import { Container, Content, Title, Notification } from "bloomer";
 
 const History = () => (
 	<Container>
