@@ -115,7 +115,9 @@ exports.createPages = async ({
 			createPage({
 				path: _path,
 				component: RawMarkdownPage,
-				context: {},
+				context: {
+					page: _path.charAt(0) + _path.slice(1).replace(/\//g, "\\/") + "/",
+				},
 			});
 			console.info(`Pages "${_path}" was creating.`);
 			return;

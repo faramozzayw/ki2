@@ -17,9 +17,9 @@ const RawMarkdownPage = ({ location, data }) => {
 }
 
 export const pageQuery = graphql`
-	query($path: String!) {
+	query($page: String!) {
 		markdownRemark(fileAbsolutePath: 
-			{ regex: $path }
+			{ regex: $page }
 		) {
 			html
 		}
