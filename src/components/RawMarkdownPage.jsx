@@ -7,11 +7,11 @@ import Layout from "./../layouts/Layout";
 
 const RawMarkdownPage = ({ data }) => {
 	const { markdownRemark } = data;
-	const { html } = markdownRemark;
+	// const { html } = markdownRemark;
 
 	return (
 		<Layout>
-			<RawMarkdown html={html} />
+			<RawMarkdown html={markdownRemark} />
 		</Layout>
 	)
 }
@@ -24,7 +24,6 @@ export const pageQuery = graphql`
 			html
 		}
 	}
-	
 `;
 
 export default RawMarkdownPage;
