@@ -103,7 +103,9 @@ exports.createPages = async ({
 			createPage({
 				path: _path,
 				component: RawMarkdownPage,
-				context: {},
+				context: {
+					path: _path,
+				},
 			});
 			console.info(`Pages "${_path}" was creating.`);
 			return;
