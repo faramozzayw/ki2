@@ -3,7 +3,7 @@ import { Container, Title, Content, Box } from "bloomer";
 
 import { useStaticQuery, graphql } from "gatsby";
 
-const RawMarkdownPage = ({ markdown }) => {
+const RawMarkdown = ({ markdown }) => {
 	return (
 			<Container>
 				<Box>
@@ -15,4 +15,4 @@ const RawMarkdownPage = ({ markdown }) => {
 	);
 }
 
-export default RawMarkdownPage;
+export default RawMarkdown;
