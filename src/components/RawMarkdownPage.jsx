@@ -5,12 +5,12 @@ import RawMarkdown from "./RawMarkdown";
 
 import Layout from "./../layouts/Layout";
 
-const RawMarkdownPage = ({ data }) => {
+const RawMarkdownPage = ({ location, data }) => {
 	const { markdownRemark } = data;
 	// const { html } = markdownRemark;
 
 	return (
-		<Layout>
+		<Layout location={location}>
 			<RawMarkdown html={markdownRemark} />
 		</Layout>
 	)
