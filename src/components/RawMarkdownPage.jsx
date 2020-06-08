@@ -7,20 +7,20 @@ import Layout from "./../layouts/Layout";
 
 const RawMarkdownPage = ({ location, data }) => {
 	const { markdownRemark } = data;
-	// const { html } = markdownRemark;
+	const { html } = markdownRemark;
 
 	return (
 		<Layout location={location}>
-			<RawMarkdown html={markdownRemark} />
+			<RawMarkdown html={html} />
 		</Layout>
 	)
 }
 
 export const pageQuery = graphql`
 	query($path: String!) {
-		markdownRemark(frontmatter: {
-			path: { eq: $path } 
-		}) {
+		markdownRemark(fileAbsolutePath: 
+			{ regex: $path }
+		) {
 			html
 		}
 	}
