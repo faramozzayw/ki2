@@ -12,7 +12,8 @@ import Footer from "./Footer";
 
 import {
 	process,
-	generateNavigator
+	generateNavigator,
+	findTitleByPath
 } from "./Header/utils";
 
 export {
@@ -29,5 +30,6 @@ export {
 	Footer,
 	
 	process,
-	generateNavigator
+	generateNavigator,
+	findTitleByPath
 }
