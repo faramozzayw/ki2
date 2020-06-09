@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import Layout from "./../../layouts/Layout";
 
-import RawMarkdown from "./../../components";
+import { RawMarkdown } from "./../../components";
 
 const StudentRules = ({ location }) => {
 	const { html } = useStaticQuery(graphql`
