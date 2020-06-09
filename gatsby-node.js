@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require('fs');
 
-export const getPagePaths = array => {
+const getPagePaths = array => {
 	return array.map(item => {
 		const newItem = { ...item };
 
