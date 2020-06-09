@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Title, Content, Box } from "bloomer";
 
-import { useStaticQuery, graphql } from "gatsby";
-
 const RawMarkdown = ({ markdown }) => {
 	return (
 			<Container>

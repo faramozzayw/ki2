@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import RawMarkdown from "./RawMarkdown";
+import { RawMarkdown } from "./index";
 
 import Layout from "./../layouts/Layout";
 

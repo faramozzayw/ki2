@@ -81,17 +81,6 @@ exports.createPages = async ({
 		})
 	});
 	
-	
-	const pagesData = await graphql(`
-		query {
-			markdownRemark(fileAbsolutePath: 
-				{regex: "/schedule/"}
-			) {
-				html
-			}
-		}
-	`);
-	
 	const RawMarkdownPage = path.resolve("./src/components/RawMarkdownPage.jsx")
 	const menu = JSON.parse(
 		fs.readFileSync(
@@ -99,7 +88,6 @@ exports.createPages = async ({
 			)
 	).menu;
 	const paths = getFlatPagePaths(menu);
-	//console.info(JSON.stringify(pagesData), null, 2)
 	
 	paths.forEach(_path => {
 		if(fs.existsSync(
@@ -112,11 +100,13 @@ exports.createPages = async ({
 		if(fs.existsSync(
 				path.resolve(`./src/data${_path}.md`))
 		) {
+			const page = _path.charAt(0) + _path.slice(1).replace(/\//g, "\/") + "/";
+			console.warn("page", page)
 			createPage({
 				path: _path,
 				component: RawMarkdownPage,
 				context: {
-					page: _path.charAt(0) + _path.slice(1).replace(/\//g, "\\/") + "/",
+					page,
 				},
 			});
 			console.info(`Pages "${_path}" was creating.`);
