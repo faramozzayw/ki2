@@ -63,14 +63,14 @@ export const generateNavigator = array => {
 
 export const createMenu = config => generateNavigator(process(config))
 
-export const findTitleByPath = array => path => {
+export const findTitleByPath = array => searchPath => {
 	return array.find(el => {
-		const { child } = el;
+		const { child, path } = el;
 		
 		if (Array.isArray(child)) {
-			return findTitleByPath(child)(path);
+			return findTitleByPath(child)(searchPath);
 		} else {
-			return el.path === path;
+			return path === searchPath;
 		}
 	});
 };

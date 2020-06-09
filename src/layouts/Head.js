@@ -11,9 +11,13 @@ const Head = ({ path }) => {
 		process(menu)
 	)(path)?.description ?? "🤔";
 	
+	const t1 = findTitleByPath(
+	process(menu)
+	)(path)?.path ?? "👀";
+	
 	return (
 		<Helmet>
-			<title>Київський авіаційний технікум | {subtitle} </title>
+			<title>Київський авіаційний технікум | {subtitle} ¦ {t1} | {path} </title>
 			<meta charset="utf-8" />
 			<meta name="description" content="Київський авіаційний технікум" />
 			<meta name="keywords" content="Київський авіаційний технікум, Київський авіаційний технікум сайт, КАТ, КіАТ" />
