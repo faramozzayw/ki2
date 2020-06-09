@@ -65,11 +65,12 @@ export const createMenu = config => generateNavigator(process(config))
 
 export const findTitleByPath = array => path => {
 	return array.forEach(el => {
+		const { child } = el;
+		
 		if (Array.isArray(child)) {
-			return findTitleByPath(newItem.child)(path);
+			return findTitleByPath(child)(path);
 		} else {
 			if(el.path === path) {
-				return el.description;
 			}
 		}
 	});
