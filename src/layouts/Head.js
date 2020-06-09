@@ -4,8 +4,9 @@ import { Helmet } from "react-helmet";
 
 import { menu } from "./../data/navbar.json";
 
-const Head = ({ location }) => {
+import { process } from "./../components"; 
 
+const Head = ({ location }) => {
 	return (
 		<Helmet>
 			<title>Київський авіаційний технікум | {location} </title>

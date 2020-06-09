@@ -3,7 +3,7 @@ import React from "react";
 import NavbarLink from "./../NavbarLink";
 import LinkDropdownGroup from "./../LinkDropdownGroup";
 
-const proccess = array => {
+export const proccess = array => {
 	return array.map(item => {
 		const newItem = { ...item };
 
@@ -35,7 +35,7 @@ const proccess = array => {
 	});
 };
 
-const generateNavigator = array => {
+export const generateNavigator = array => {
 	return array.map(({ path, description, icon_name, child }) => {
 		if (Array.isArray(child)) {
 			return (
