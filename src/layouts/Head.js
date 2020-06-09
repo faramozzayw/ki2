@@ -8,7 +8,7 @@ import { findTitleByPath, process } from "./../components";
 
 const Head = ({ path }) => {
 	const subtitle = findTitleByPath(
-		process(menu)
+		menu
 	)(path)?.description ?? "🤔";
 	
 	const t1 = findTitleByPath(
