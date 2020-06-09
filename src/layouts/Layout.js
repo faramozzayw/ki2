@@ -12,7 +12,7 @@ import Head from "./Head";
 
 const Layout = ({ children, location }) => (
 	<div>
-		<Head path={location} />
+		<Head path={location.pathname} />
 		<Hero isFullHeight isColor="light">
 			<HeroHeader>
 				<AppHeader />
