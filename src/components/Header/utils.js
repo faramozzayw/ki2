@@ -71,7 +71,7 @@ export const findTitleByPath = array => path => {
 			return findTitleByPath(child)(path);
 		} else {
 			if(el.path === path) {
-				return el.description;
+				return el["description"];
 			} else {
 				return "🤔";
 			}
