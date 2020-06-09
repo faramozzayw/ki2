@@ -9,7 +9,7 @@ import { findTitleByPath, process } from "./../components";
 const Head = ({ path }) => {
 	const subtitle = findTitleByPath(
 		process(menu)
-	)(path);
+	)(path)?.description ?? "🤔";
 	
 	return (
 		<Helmet>

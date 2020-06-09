@@ -70,11 +70,7 @@ export const findTitleByPath = array => path => {
 		if (Array.isArray(child)) {
 			return findTitleByPath(child)(path);
 		} else {
-			if(el.path === path) {
-				return el["description"];
-			} else {
-				return "🤔";
-			}
+			return el.path === path;
 		}
 	});
 };
