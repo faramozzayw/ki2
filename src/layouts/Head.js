@@ -4,10 +4,12 @@ import { Helmet } from "react-helmet";
 
 import { menu } from "./../data/navbar.json";
 
-import { findTitleByPath } from "./../components"; 
+import { findTitleByPath, process } from "./../components"; 
 
 const Head = ({ path }) => {
-	const subtitle = findTitleByPath(menu)(path);
+	const subtitle = findTitleByPath(
+		process(menu)
+	)(path);
 	
 	return (
 		<Helmet>
