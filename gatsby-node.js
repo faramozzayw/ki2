@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require('fs');
 
-const getPagePaths = array => {
+export const getPagePaths = array => {
 	return array.map(item => {
 		const newItem = { ...item };
 
@@ -101,7 +101,6 @@ exports.createPages = async ({
 				path.resolve(`./src/data${_path}.md`))
 		) {
 			const page = _path.charAt(0) + _path.slice(1).replace(/\//g, "\/") + "/";
-			console.warn("page", page)
 			createPage({
 				path: _path,
 				component: RawMarkdownPage,
