@@ -3,7 +3,7 @@ import React from "react";
 import NavbarLink from "./../NavbarLink";
 import LinkDropdownGroup from "./../LinkDropdownGroup";
 
-export const proccess = array => {
+export const process = array => {
 	return array.map(item => {
 		const newItem = { ...item };
 
@@ -24,7 +24,7 @@ export const proccess = array => {
 
 			return {
 				...newItem,
-				child: proccess(newItem.child),
+				child: process(newItem.child),
 			};
 		} else {
 			return {
@@ -61,34 +61,4 @@ export const generateNavigator = array => {
 	});
 };
 
-
-export const getPagePaths = array => {
-	return array.map(item => {
-		const newItem = { ...item };
-
-		const { child } = newItem;
-		const parentPath = newItem.path;
-
-		if (Array.isArray(child)) {
-			newItem.child = child.map(({ path }) => {
-				const newPath = parentPath.concat(
-					`/${path}`
-				);
-
-				return { 
-					path: newPath
-				};
-			});
-
-			return {
-				child: proccess(newItem.child),
-			};
-		} else {
-			return {
-				path: `/${parentPath}`
-			};
-		}
-	});
-};
-
-export const createMenu = config => generateNavigator(proccess(config))
+export const createMenu = config => generateNavigator(process(config))
