@@ -8,6 +8,7 @@ import Layout from "./../layouts/Layout";
 const RawMarkdownPage = ({ location, data }) => {
 	const { markdownRemark } = data;
 	const { html } = markdownRemark;
+	alert(html)
 
 	return (
 		<Layout location={location}>
