@@ -61,7 +61,7 @@ export const generateNavigator = array => {
 	});
 };
 
-const menuConfigToFlat = array => {
+export const menuConfigToFlat = array => {
 	return array.flatMap(item => {
 		if (Array.isArray(item.child)) {
       return menuConfigToFlat(item.child)
@@ -77,17 +77,3 @@ export const findTitleByPath = array => searchPath => {
 	return menuConfigToFlat(array)
 		.find(({ path }) => path === searchPath);
 }
-
-/*
-export const findTitleByPath = array => searchPath => {
-	return array.find(el => {
-		const { child, path } = el;
-		
-		if (Array.isArray(child)) {
-			return findTitleByPath(child)(searchPath);
-		} else {
-			return path === searchPath;
-		}
-	});
-};
-*/
