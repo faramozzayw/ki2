@@ -61,8 +61,24 @@ export const generateNavigator = array => {
 	});
 };
 
-export const createMenu = config => generateNavigator(process(config))
+const menuConfigToFlat = array => {
+	return array.flatMap(item => {
+		if (Array.isArray(child)) {
+      return getPagePaths(item.child)
+    } else {
+			return { ...item	}
+		}
+	});
+}
 
+export const createMenu = config => generateNavigator(process(config));
+
+export const findTitleByPath = array => searchPath => {
+	return menuConfigToFlat(array)
+		.find(({ path }) => path === searchPath);
+}
+
+/*
 export const findTitleByPath = array => searchPath => {
 	return array.find(el => {
 		const { child, path } = el;
@@ -74,3 +90,4 @@ export const findTitleByPath = array => searchPath => {
 		}
 	});
 };
+*/

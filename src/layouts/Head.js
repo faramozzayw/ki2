@@ -8,11 +8,11 @@ import { findTitleByPath, process } from "./../components";
 
 const Head = ({ path }) => {
 	const subtitle = findTitleByPath(
-		menu
+		process(menu)
 	)(path)?.description ?? "🤔";
 	
 	const t1 = findTitleByPath(
-	process(menu)
+		process(menu)
 	)(path)?.path ?? "👀";
 	
 	return (
