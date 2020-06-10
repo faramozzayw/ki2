@@ -34,8 +34,6 @@ const LinkDropdownGroup = ({ path, title, icon_name, children }) => {
 			<div className="arrow" onClick={toggleDropdown}>
 
 				<Item title={title} icon_name={icon_name} />
-				
-				// TODO: rework this
 				<OpenDropdownButton toggle={() =>{}} status={showStatus} />
 			
 			</div>
