@@ -63,7 +63,7 @@ export const generateNavigator = array => {
 
 const menuConfigToFlat = array => {
 	return array.flatMap(item => {
-		if (Array.isArray(child)) {
+		if (Array.isArray(item.child)) {
       return getPagePaths(item.child)
     } else {
 			return { ...item	}
