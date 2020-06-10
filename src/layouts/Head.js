@@ -10,6 +10,7 @@ const Head = ({ path }) => {
 	const subtitle = findTitleByPath(
 		process(menu)
 	)(path)?.title;
+	
 	const title = subtitle ? `| ${subtitle}` : "";
 	
 	return (
