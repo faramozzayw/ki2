@@ -7,14 +7,14 @@ import { menu } from "./../data/navbar.json";
 import { findTitleByPath, process } from "./../components"; 
 
 const Head = ({ path }) => {
-	let subtitle = findTitleByPath(
+	const subtitle = findTitleByPath(
 		process(menu)
 	)(path)?.description;
-	subtitle = subtitle ? `| ${subtitle}` : "";
+	const title = subtitle ? `| ${subtitle}` : "";
 	
 	return (
 		<Helmet>
-			<title>Київський авіаційний технікум {subtitle} </title>
+			<title>Київський авіаційний технікум {title} </title>
 			<meta charset="utf-8" />
 			<meta name="description" content="Київський авіаційний технікум" />
 			<meta name="keywords" content="Київський авіаційний технікум, Київський авіаційний технікум сайт, КАТ, КіАТ" />
