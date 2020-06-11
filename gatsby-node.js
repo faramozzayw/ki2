@@ -103,6 +103,7 @@ exports.createPages = async ({
 				path.resolve(`./src/data${_path}.md`))
 		) {
 			const pageContext = _path.charAt(0) + _path.slice(1).replace(/\//g, "\/") + "/";
+			console.warn(pageContext)
 			createPage({
 				path: _path,
 				component: RawMarkdownPage,
