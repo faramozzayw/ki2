@@ -115,7 +115,7 @@ exports.createPages = async ({
 		}
 		
 		createPage({
-			page: _page,
+			page: _path,
 			component: ComingSoonPage,
 			context: {}
 		});
