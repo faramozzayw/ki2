@@ -1,15 +1,30 @@
 import React from "react";
 
+import {
+	Message,
+	MessageHeader,
+	MessageBody,
+	Content,
+	Icon
+} from "bloomer";
+
 import Layout from "./../layouts/Layout";
 
 const NotFoundPage = ({ location }) => (
-	<Layout location={location} >
-		<div>
-			<h1>Сторінку не знайдено!</h1>
-			<p>Ви просто потрапили на маршрут, який не має виходу...</p>
-		</div>
+	<Layout location={location}>
+		<Message isColor="warning">
+		  <MessageHeader>
+		      <p>Увага! ВАЖЛИВЕ ПОВІДОМЛЕННЯ!</p>
+		  </MessageHeader>
+		  <MessageBody>
+		      <Content>
+						<h3>Сторінку не знайдено!</h3>
+						<br />
+						<h4>Цієї сторінки не існує... <a href="/main">Повернутися на головну</a></h4>
+					</Content>
+		  </MessageBody>
+		</Message>
 	</Layout>
-
 );
 
 export default NotFoundPage;

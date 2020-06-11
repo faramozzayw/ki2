@@ -1,13 +1,31 @@
 import React from "react";
 
-import { Title } from "bloomer";
+import {
+	Message,
+	MessageHeader,
+	MessageBody,
+	Content,
+	Icon
+} from "bloomer";
 
 import Layout from "./../layouts/Layout";
 
 const ComingSoonPage = ({ location }) => (
 	<Layout location={location}>
-		<Title isSize={2} tag="h2">Ця сторінка на даний момент незаповнена</Title>
-		<Title isSize={4} tag="h4">Але це не на довго</Title>
+		<Message isColor="warning">
+		  <MessageHeader>
+		      <p>Увага! ВАЖЛИВЕ ПОВІДОМЛЕННЯ!</p>
+		  </MessageHeader>
+		  <MessageBody>
+		      <Content>
+						<h3>Ця сторінка на даний момент незаповнена</h3>
+						<br />
+						<h4>Але це не на довго, адже ми вже працює над цим <Icon hasTextColor="danger" className="fa fa-heart" /></h4>
+						<br />
+						<a href="/main">Повернутися на головну</a>
+					</Content>
+		  </MessageBody>
+		</Message>
 	</Layout>
 );
 
