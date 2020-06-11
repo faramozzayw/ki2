@@ -20,7 +20,9 @@ const NotFoundPage = ({ location }) => (
 		      <Content>
 						<h3>Сторінку не знайдено!</h3>
 						<br />
-						<h4>Цієї сторінки не існує... <a href="/main">Повернутися на головну</a></h4>
+						<h4>Цієї сторінки не існує...</h4>
+						<br />
+						<a href="/main">Повернутися на головну</a>
 					</Content>
 		  </MessageBody>
 		</Message>

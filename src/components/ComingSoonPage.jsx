@@ -20,7 +20,7 @@ const ComingSoonPage = ({ location }) => (
 		      <Content>
 						<h3>Ця сторінка на даний момент незаповнена</h3>
 						<br />
-						<h4>Але це не на довго, адже ми вже працює над цим <Icon hasTextColor="danger" className="fa fa-heart" /></h4>
+						<h4>Але це не на довго, адже ми вже працюємо над цим <Icon hasTextColor="danger" className="fa fa-heart" /></h4>
 						<br />
 						<a href="/main">Повернутися на головну</a>
 					</Content>
