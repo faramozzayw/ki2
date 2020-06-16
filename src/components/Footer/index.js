@@ -15,7 +15,9 @@ const AppFooter = () => (
 							by <a href="https://github.com/faramozzayw">faramozzayw</a>
 						</p>
 					</Column>
-                    <Column isSize="1/2" hasTextAlign="right"><FeedbackForm /></Column>
+					<Column isSize="1/2" hasTextAlign="right">
+						<FeedbackForm />
+					</Column>
 				</Columns>
 			</Content>
 		</Container>
