@@ -8,6 +8,8 @@ import NavbarLink from "./NavbarLink";
 import Header from "./Header";
 import Footer from "./Footer";
 
+import FeedbackForm from "./FeedbackForm";
+
 import { process, generateNavigator, findMetaByPath } from "./Header/utils";
 
 export {
@@ -19,7 +21,8 @@ export {
 	Airplane,
 	NavbarLink,
 	Header,
-	Footer,
+    Footer,
+    FeedbackForm,
 	process,
 	generateNavigator,
 	findMetaByPath,

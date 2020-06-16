@@ -1,6 +1,7 @@
 module.exports = {
 	siteMetadata: {
         title: 'Київський авіаційний технікум',
+        description: `Київський авіаційний технікум`,
         siteUrl: `https://kiat.now.sh/`,
 	},
 	plugins: [
