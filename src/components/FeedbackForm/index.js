@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import {
 	Modal,
 	ModalBackground,
@@ -15,36 +15,80 @@ import {
 	Help,
 } from "bloomer";
 
-import FeedbackFormHeader from "./FeedbackFormHeader";
-import FeedbackFormFooter from "./FeedbackFormFooter";
+import {
+	setTitle,
+	setDescription,
+	setType,
+	toggleIsLoading,
+	setResponseStatusOK,
+	reset,
+} from "./store/action";
+import { initialState } from "./store/formData";
+import { reducer } from "./store/reducer";
+
+import { FeedbackFormHeader, FeedbackFormFooter } from "./components";
+import { maxTitleLen, createIssue } from "./utils";
 
 const FeedbackForm = () => {
 	const [modalStatus, toggleModal] = useState(false);
-	const [errorStatus, setError] = useState(false);
 
-	const [title, setTitle] = useState("");
-
-	useEffect(() => {
-		const titleOverlen = maxTitleLen - title.length < 0;
-
-		setError(titleOverlen);
-	}, [title]);
+	const [
+		{ title, description, errorStatus, type, isLoading, responseStatusOK },
+		dispatch,
+	] = useReducer(reducer, initialState);
 
 	const changeTitle = e => {
-		const { value } = e.target;
+		dispatch({ type: setTitle, payload: e.target.value });
+	};
 
-		setTitle(value);
+	const changeDescription = e => {
+		dispatch({ type: setDescription, payload: e.target.value });
+	};
+
+	const changeType = e => {
+		dispatch({ type: setType, payload: e.target.value });
 	};
 
 	const submitHandler = e => {
 		e.preventDefault();
-		console.log("send!");
+		dispatch({
+			type: toggleIsLoading,
+			payload: true,
+		});
+
+		createIssue({
+			title,
+			description,
+			type,
+		})
+			.then(response => {
+				dispatch({
+					type: setResponseStatusOK,
+					payload: response.ok,
+				});
+			})
+			.catch(_ =>
+				dispatch({
+					type: setResponseStatusOK,
+					payload: false,
+				}),
+			)
+			.finally(_ =>
+				dispatch({
+					type: toggleIsLoading,
+					payload: false,
+				}),
+			);
 	};
 
 	const openModal = () => toggleModal(true);
-	const closeModal = () => toggleModal(false);
+	const closeModal = () => {
+		toggleModal(false);
+		dispatch({
+			type: reset,
+		});
+	};
 
-	const maxTitleLen = 100;
 	const currentLen = maxTitleLen - title.length;
 
 	return (
@@ -67,7 +111,7 @@ const FeedbackForm = () => {
 										required
 									/>
 									<Help
-										isColor={currentLen >= 0 ? "success" : "danger"}
+										isColor={errorStatus ? "danger" : "success"}
 										hasTextAlign="right"
 									>
 										{currentLen}/{maxTitleLen}
@@ -77,7 +121,12 @@ const FeedbackForm = () => {
 							<Field>
 								<Label>Детальний опис...</Label>
 								<Control>
-									<TextArea placeholder={"Детальний опис..."} required />
+									<TextArea
+										placeholder={"Детальний опис..."}
+										value={description}
+										onChange={changeDescription}
+										required
+									/>
 								</Control>
 							</Field>
 							{/*
@@ -89,10 +138,19 @@ const FeedbackForm = () => {
 								</Field>
 							*/}
 							<Field>
-								<Control>
-									<Radio name="req_type" defaultChecked> Помилка </Radio>
-									<Radio name="req_type"> Побажання </Radio>
-									<Radio name="req_type"> Ідея </Radio>
+								<Control onChange={changeType}>
+									<Radio name="req_type" value="bug" defaultChecked>
+										{" "}
+										Помилка{" "}
+									</Radio>
+									<Radio name="req_type" value="proposal">
+										{" "}
+										Побажання{" "}
+									</Radio>
+									<Radio name="req_type" value="feature">
+										{" "}
+										Ідея{" "}
+									</Radio>
 								</Control>
 							</Field>
 						</form>
@@ -100,6 +158,8 @@ const FeedbackForm = () => {
 					<FeedbackFormFooter
 						cancelHandler={closeModal}
 						errorStatus={errorStatus}
+						isLoading={isLoading}
+						responseStatusOK={responseStatusOK}
 					/>
 				</ModalCard>
 			</Modal>
