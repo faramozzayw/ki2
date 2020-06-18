@@ -2,7 +2,7 @@ import React from "react";
 
 import { ModalCardFooter, Button, Help } from "bloomer";
 
-const FeedbackFormFooter = ({
+export const FeedbackFormFooter = ({
 	sendHandler = () => {},
 	cancelHandler = () => {},
 	errorStatus = false,
@@ -31,5 +31,3 @@ const FeedbackFormFooter = ({
 			))}
 	</ModalCardFooter>
 );
-
-export default FeedbackFormFooter;

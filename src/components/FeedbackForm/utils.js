@@ -1,5 +1,3 @@
-import { setDescription } from "./store/action";
-
 export const maxTitleLen = 100;
 
 export const createIssue = async ({ title, description, type }) => {
