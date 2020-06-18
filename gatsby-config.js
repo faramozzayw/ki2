@@ -15,6 +15,12 @@ module.exports = {
 		`gatsby-plugin-sitemap`,
 		"gatsby-plugin-sass",
 		{
+			resolve: `gatsby-plugin-env-variables`,
+			options: {
+				whitelist: ["REACT_APP_AUTH_TOKEN"],
+			},
+		},
+		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `news`,
