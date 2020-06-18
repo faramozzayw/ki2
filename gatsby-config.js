@@ -1,6 +1,8 @@
+/*
 require("dotenv").config({
 	path: `.env.${process.env.NODE_ENV}`,
 });
+*/
 
 module.exports = {
 	siteMetadata: {
@@ -12,6 +14,12 @@ module.exports = {
 		"gatsby-plugin-react-helmet",
 		`gatsby-plugin-sitemap`,
 		"gatsby-plugin-sass",
+		{
+			resolve: `gatsby-plugin-env-variables`,
+			options: {
+				whitelist: ["REACT_APP_AUTH_TOKEN"],
+			},
+		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {

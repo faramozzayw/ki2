@@ -2,13 +2,14 @@ import { setDescription } from "./store/action";
 
 export const maxTitleLen = 100;
 
-export const createIssue = ({ title, description, type }) => {
-	const repo = "ki2test";
+export const createIssue = async ({ title, description, type }) => {
+	const repo = "ki2";
 	const owner = "faramozzayw";
 
 	const url = `https://api.github.com/repos/${owner}/${repo}/issues`;
 
 	const token = process.env.REACT_APP_AUTH_TOKEN;
+	console.info(token ? "Token exist" : "Token status: wtf?");
 
 	return fetch(url, {
 		method: "POST",
