@@ -13,7 +13,8 @@ module.exports = {
 	plugins: [
 		"gatsby-plugin-react-helmet",
 		`gatsby-plugin-sitemap`,
-		"gatsby-plugin-sass",
+		`gatsby-plugin-sass`,
+		`gatsby-plugin-typescript`,
 		{
 			resolve: `gatsby-plugin-env-variables`,
 			options: {

@@ -6,9 +6,9 @@ import { Image, Content, Box, Title, Container } from "bloomer";
 
 import Layout from "./../layouts/Layout";
 
-import { RawMarkdown } from "./../components/index";
+import { RawMarkdown } from "./../components";
 
-import { Location, MarkdownRemark } from "./../types/index";
+import { Location, MarkdownRemark } from "./../types";
 
 export interface NewsTemplateProps {
 	location: Location;
