@@ -23,6 +23,7 @@ export interface PageMetadata {
 	title?: string;
 	icon_name?: string;
 	children?: React.ReactNode | string;
+	description?: string;
 }
 
 export interface News {
@@ -38,7 +39,7 @@ export interface Issue {
 	type: string;
 }
 
-export interface ReducerAction {
+export interface Action {
 	type: Symbol | string;
 	payload?: any;
 }

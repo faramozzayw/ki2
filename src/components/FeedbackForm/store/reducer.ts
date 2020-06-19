@@ -12,12 +12,12 @@ import {
 
 import { maxTitleLen } from "./../utils";
 
-import { ReducerAction } from "./../../../types";
-import { FeedbackFormState, ResponseStatusOK } from "./formData";
+import { Action } from "./../../../types";
+import { FeedbackFormState, ResponseStatusOK } from "./types";
 
 export const reducer = (
 	state: FeedbackFormState = initialState,
-	action: ReducerAction,
+	action: Action,
 ) => {
 	switch (action.type) {
 		case setTitle: {
