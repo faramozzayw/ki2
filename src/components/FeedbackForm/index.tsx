@@ -15,16 +15,8 @@ import {
 } from "bloomer";
 
 import {
-	setTitle,
-	setDescription,
-	setType,
-	toggleIsLoading,
-	setResponseStatusOK,
-	reset,
-	// creators
 	setDescriptionCreators,
 	setTitleCreators,
-	setErrorCreators,
 	setTypeCreators,
 	setResponseStatusOKCreators,
 	toggleIsLoadingCreators,

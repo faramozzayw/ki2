@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Title, Content, Box } from "bloomer";
+import { Container, Content, Box } from "bloomer";
 
 export interface RawMarkdownProps {
 	html: string;

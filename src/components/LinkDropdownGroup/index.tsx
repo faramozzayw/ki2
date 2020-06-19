@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavbarDropdown, NavbarItem, Icon } from "bloomer";
 
-import NavbarLink from "./../index";
+import { NavbarLink } from "./../index";
 
 import { PageMetadata } from "./../../types";
 
@@ -27,10 +27,7 @@ const LinkDropdownGroup: React.FC<PageMetadata> = ({
 }) => {
 	const [showStatus, updateShowStatus] = useState(false);
 
-	const toggleDropdown = () => {
-		console.log("Click");
-		updateShowStatus(!showStatus);
-	};
+	const toggleDropdown = () => updateShowStatus(!showStatus);
 
 	return (
 		<NavbarItem

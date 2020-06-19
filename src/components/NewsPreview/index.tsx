@@ -7,8 +7,6 @@ import {
 	CardHeader,
 	CardHeaderTitle,
 	CardContent,
-	CardImage,
-	Image,
 	Content,
 	CardFooter,
 	CardFooterItem,

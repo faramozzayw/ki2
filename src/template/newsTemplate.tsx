@@ -2,7 +2,7 @@ import React from "react";
 
 import { graphql } from "gatsby";
 
-import { Image, Content, Box, Title, Container } from "bloomer";
+import { Box, Title, Container } from "bloomer";
 
 import Layout from "./../layouts/Layout";
 
@@ -20,7 +20,7 @@ export interface NewsTemplateProps {
 const NewsTemplate: React.FC<NewsTemplateProps> = ({ data, location }) => {
 	const { markdownRemark } = data;
 	const { frontmatter, html } = markdownRemark;
-	const { title, date, path } = frontmatter;
+	const { title } = frontmatter;
 
 	return (
 		<Layout location={location}>
