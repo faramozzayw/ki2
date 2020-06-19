@@ -4,7 +4,9 @@ import { Message, MessageHeader, MessageBody, Content, Icon } from "bloomer";
 
 import Layout from "./../layouts/Layout";
 
-const NotFoundPage = ({ location }) => (
+import { PageWithLocation } from "./../types";
+
+const NotFoundPage: React.FC<PageWithLocation> = ({ location }) => (
 	<Layout location={location}>
 		<Message isColor="warning">
 			<MessageHeader>

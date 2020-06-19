@@ -36,19 +36,19 @@ const FeedbackForm = () => {
 		dispatch,
 	] = useReducer(reducer, initialState);
 
-	const changeTitle = e => {
+	const changeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
 		dispatch({ type: setTitle, payload: e.target.value });
 	};
 
-	const changeDescription = e => {
+	const changeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
 		dispatch({ type: setDescription, payload: e.target.value });
 	};
 
-	const changeType = e => {
+	const changeType = (e: React.ChangeEvent<HTMLInputElement>) => {
 		dispatch({ type: setType, payload: e.target.value });
 	};
 
-	const submitHandler = e => {
+	const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		dispatch({
 			type: toggleIsLoading,

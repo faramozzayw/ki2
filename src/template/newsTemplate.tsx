@@ -6,9 +6,18 @@ import { Image, Content, Box, Title, Container } from "bloomer";
 
 import Layout from "./../layouts/Layout";
 
-import { RawMarkdown } from "./../components";
+import { RawMarkdown } from "./../components/index";
 
-const NewsTemplate = ({ data, location }) => {
+import { Location, MarkdownRemark } from "./../types/index";
+
+export interface NewsTemplateProps {
+	location: Location;
+	data: {
+		markdownRemark: MarkdownRemark;
+	};
+}
+
+const NewsTemplate: React.FC<NewsTemplateProps> = ({ data, location }) => {
 	const { markdownRemark } = data;
 	const { frontmatter, html } = markdownRemark;
 	const { title, date, path } = frontmatter;

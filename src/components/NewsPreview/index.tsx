@@ -15,12 +15,18 @@ import {
 	Button,
 } from "bloomer";
 
+import { News } from "./../../types";
+
 import "./index.sass";
 
-const toPreviewText = (str, begin = 0, end = 150, suspensionPoints = "...") =>
-	str.slice(begin, end).concat(suspensionPoints);
+const toPreviewText = (
+	str = "",
+	begin = 0,
+	end = 150,
+	suspensionPoints = "...",
+) => str.slice(begin, end).concat(suspensionPoints);
 
-const NewsPreview = ({ title, date, path, html, image }) => {
+const NewsPreview: React.FC<News> = ({ title, date, path, html }) => {
 	return (
 		<div className="NewsPreview">
 			<Card>
@@ -29,12 +35,6 @@ const NewsPreview = ({ title, date, path, html, image }) => {
 						{!!title ? title : "Новина без назви - просто новина"}
 					</CardHeaderTitle>
 				</CardHeader>
-
-				{!!image && (
-					<CardImage>
-						<Image isRatio="4:3" src={image} />
-					</CardImage>
-				)}
 
 				<CardContent>
 					<Content>

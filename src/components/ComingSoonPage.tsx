@@ -4,13 +4,9 @@ import { Message, MessageHeader, MessageBody, Content, Icon } from "bloomer";
 
 import Layout from "./../layouts/Layout";
 
-import { Location } from "./../types";
+import { PageWithLocation } from "./../types";
 
-export interface ComingSoonPageProps {
-	location: Location;
-}
-
-const ComingSoonPage: React.FC<ComingSoonPageProps> = ({ location }) => (
+const ComingSoonPage: React.FC<PageWithLocation> = ({ location }) => (
 	<Layout location={location}>
 		<Message isColor="warning">
 			<MessageHeader>

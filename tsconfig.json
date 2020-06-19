@@ -8,10 +8,13 @@
 		"checkJs": true,
 		"jsx": "react",
 		"strict": true,
+		"moduleResolution": "node",
 		"esModuleInterop": true,
 		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
 		"emitDecoratorMetadata": true,
 		"noEmit": true,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"resolveJsonModule": true
 	}
 }
