@@ -3,7 +3,9 @@ import React from "react";
 import NavbarLink from "./../NavbarLink";
 import LinkDropdownGroup from "./../LinkDropdownGroup";
 
-export const process = (array: any[]): any => {
+import { PageMetadata, PageConfig } from "./../../types";
+
+export const process = (array: PageConfig[]): PageConfig[] => {
 	return array.map(item => {
 		const newItem = { ...item };
 
@@ -59,8 +61,9 @@ export const generateNavigator = (array: any[]): any => {
 	});
 };
 
-export const menuConfigToFlat = (array: any[]): any => {
-	return array.flatMap(item => {
+export const menuConfigToFlat = (array: PageConfig[]): PageConfig[] => {
+	// @ts-ignore // problem with flatMap
+	return array.flatMap((item: PageConfig) => {
 		if (Array.isArray(item.child)) {
 			return menuConfigToFlat(item.child);
 		} else {
@@ -69,8 +72,11 @@ export const menuConfigToFlat = (array: any[]): any => {
 	});
 };
 
-export const createMenu = (config: any) => generateNavigator(process(config));
+export const createMenu = (config: PageConfig[]) =>
+	generateNavigator(process(config));
 
-export const findMetaByPath = (array: any[]): any => (searchPath: string) => {
+export const findMetaByPath = (array: PageConfig[]) => (
+	searchPath: string,
+): PageConfig | undefined => {
 	return menuConfigToFlat(array).find(({ path }) => path === searchPath);
 };
