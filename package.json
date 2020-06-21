@@ -40,7 +40,7 @@
 		"dev": "gatsby develop",
 		"dev_o": "gatsby develop -o",
 		"clean": "gatsby clean",
-		"test": "echo \"Error: no test specified\""
+		"test": "jest"
 	},
 	"devDependencies": {
 		"@babel/preset-typescript": "^7.10.1",
