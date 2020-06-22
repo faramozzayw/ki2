@@ -3,7 +3,6 @@
 }
 
 .dark-mode .modal-card .modal-card-title {
-	color: var(--dark-mode-title-color) !important;
 	font-weight: bold;
 }
 
@@ -11,8 +10,6 @@
 	color: var(--dark-mode-text-color) !important;
 }
 
-.dark-mode .modal-card input::placeholder,
-.dark-mode .modal-card select::placeholder,
-.dark-mode .modal-card textarea::placeholder {
+.dark-mode .modal-card .field *::placeholder {
 	filter: invert(1);
 }

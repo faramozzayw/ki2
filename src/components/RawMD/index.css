@@ -8,34 +8,51 @@
 	font-family: "Segoe UI", serif, var(--fallback-font);
 }
 
+.dark-mode .box {
+	background: var(--dark-mode-bg);
+}
+
+.dark-mode .raw-markdown-remark {
+	color: var(--dark-mode-text-color);
+}
+
+.dark-mode .raw-markdown-remark h1,
+.dark-mode .raw-markdown-remark h2,
+.dark-mode .raw-markdown-remark h3,
+.dark-mode .raw-markdown-remark h4,
+.dark-mode .raw-markdown-remark h5,
+.dark-mode .raw-markdown-remark h6 {
+	color: var(--dark-mode-text-color);
+}
+
 .raw-markdown-remark h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.raw-markdown-remark h2,
+.raw-markdown-remark h3,
+.raw-markdown-remark h4,
+.raw-markdown-remark h5,
+.raw-markdown-remark h6 {
 	font-family: "Segoe UI", sans-serif, var(--fallback-font);
 	font-weight: 700 !important;
 }
 
-.raw-markdown-rem a {
+.raw-markdown-remark a {
 	border-bottom: 0.1rem dashed var(--active-md-link);
 	color: var(--active-md-link) !important;
 }
 
-.raw-markdown-rem a:visited {
+.raw-markdown-remark a:visited {
 	color: var(--visited-md-link) !important;
 	border-bottom-color: var(--visited-md-link);
 }
 
-.raw-markdown-rem .left {
+.raw-markdown-remark .left {
 	text-align: left;
 }
 
-.raw-markdown-rem .right {
+.raw-markdown-remark .right {
 	text-align: right;
 }
 
-.raw-markdown-rem .center {
+.raw-markdown-remark .center {
 	text-align: center;
 }

@@ -15,11 +15,6 @@
 	background-color: var(--dark-mode-bg);
 	color: var(--dark-mode-text) !important;
 }
-
-.dark-mode #NewsPreview .card-header-title {
-	color: var(--dark-mode-title-color) !important;
-}
-
 .dark-mode #NewsPreview .content * {
 	color: var(--dark-mode-text-color) !important;
 }

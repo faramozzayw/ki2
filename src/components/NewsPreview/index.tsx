@@ -27,13 +27,13 @@ const toPreviewText = (
 ) => str.slice(begin, end).concat(suspensionPoints);
 
 const NewsPreview: React.FC<News> = ({ title, date, path, html }) => {
-	const { value: DarkModeOn } = useDarkMode();
+	const darkmode = useDarkMode();
 
 	return (
 		<div id="NewsPreview">
 			<Card>
 				<CardHeader>
-					<CardHeaderTitle>
+					<CardHeaderTitle hasTextColor={darkmode.value ? "primary" : "info"}>
 						{!!title ? title : "Новина без назви - просто новина"}
 					</CardHeaderTitle>
 				</CardHeader>
@@ -52,7 +52,7 @@ const NewsPreview: React.FC<News> = ({ title, date, path, html }) => {
 					<CardFooterItem>
 						<Button
 							isColor="light"
-							isOutlined={DarkModeOn}
+							isOutlined={darkmode.value}
 							isPaddingless
 							isLink
 						>

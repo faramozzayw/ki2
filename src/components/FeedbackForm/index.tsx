@@ -83,7 +83,10 @@ const FeedbackForm = () => {
 			<Modal isActive={modalStatus} hasTextAlign="left">
 				<ModalBackground />
 				<ModalCard>
-					<FeedbackFormHeader closeModal={closeModal} />
+					<FeedbackFormHeader
+						closeModal={closeModal}
+						darkmode={darkmode.value}
+					/>
 					<ModalCardBody>
 						<form onSubmit={submitHandler} id="feedback_form">
 							<Field>
