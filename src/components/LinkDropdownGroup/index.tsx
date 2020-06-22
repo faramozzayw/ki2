@@ -30,7 +30,7 @@ const LinkDropdownGroup: React.FC<PageMetadata> = ({
 
 	const toggleDropdown = () => updateShowStatus(!showStatus);
 
-	const currentURL = window?.location?.href?.includes(path);
+	const currentURL = typeof window === "undefined" ? window?.location?.href?.includes(path) : false;
 
 	return (
 		<NavbarItem
