@@ -32,7 +32,7 @@ const LinkDropdownGroup: React.FC<PageMetadata> = ({
 	
 	let currentURL = false;
 	if (typeof window !== 'undefined') {
-		currentURL = window?.location?.href?.includes(path) : false; 
+		currentURL = window?.location?.href?.includes(path); 
 	}
 	
 	return (
