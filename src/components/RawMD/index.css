@@ -1,0 +1,41 @@
+.raw-markdown-remark {
+	--active-md-link: #0f6cab;
+	--visited-md-link: #4b6f88;
+	--fallback-font: BlinkMacSystemFont, -apple-system, "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		"Helvetica", "Arial", sans-serif;
+
+	font-family: "Segoe UI", serif, var(--fallback-font);
+}
+
+.raw-markdown-remark h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Segoe UI", sans-serif, var(--fallback-font);
+	font-weight: 700 !important;
+}
+
+.raw-markdown-rem a {
+	border-bottom: 0.1rem dashed var(--active-md-link);
+	color: var(--active-md-link) !important;
+}
+
+.raw-markdown-rem a:visited {
+	color: var(--visited-md-link) !important;
+	border-bottom-color: var(--visited-md-link);
+}
+
+.raw-markdown-rem .left {
+	text-align: left;
+}
+
+.raw-markdown-rem .right {
+	text-align: right;
+}
+
+.raw-markdown-rem .center {
+	text-align: center;
+}

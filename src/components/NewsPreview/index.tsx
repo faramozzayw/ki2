@@ -13,6 +13,8 @@ import {
 	Button,
 } from "bloomer";
 
+import useDarkMode from "use-dark-mode";
+
 import { News } from "./../../types";
 
 import "./index.sass";
@@ -25,6 +27,8 @@ const toPreviewText = (
 ) => str.slice(begin, end).concat(suspensionPoints);
 
 const NewsPreview: React.FC<News> = ({ title, date, path, html }) => {
+	const { value: DarkModeOn } = useDarkMode();
+
 	return (
 		<div className="NewsPreview">
 			<Card>
@@ -46,7 +50,12 @@ const NewsPreview: React.FC<News> = ({ title, date, path, html }) => {
 						<small>Дата публікації: {date}</small>
 					</CardFooterItem>
 					<CardFooterItem>
-						<Button isColor="light" isPaddingless isLink>
+						<Button
+							isColor="light"
+							isOutlined={DarkModeOn}
+							isPaddingless
+							isLink
+						>
 							<Link
 								style={{
 									padding: "0.75rem",
