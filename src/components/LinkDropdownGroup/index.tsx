@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "gatsby-link";
 import { NavbarDropdown, NavbarItem, Icon } from "bloomer";
 
 import { NavbarLink } from "./../index";
@@ -29,6 +30,8 @@ const LinkDropdownGroup: React.FC<PageMetadata> = ({
 
 	const toggleDropdown = () => updateShowStatus(!showStatus);
 
+	const currentURL = window.location.href.includes(path);
+
 	return (
 		<NavbarItem
 			hasDropdown
@@ -37,7 +40,10 @@ const LinkDropdownGroup: React.FC<PageMetadata> = ({
 			tabIndex={0}
 			onKeyDown={toggleDropdown}
 		>
-			<div className="arrow" onClick={toggleDropdown}>
+			<div
+				className={`arrow ${currentURL ? "currentURL" : ""}`}
+				onClick={toggleDropdown}
+			>
 				<Item title={title} icon_name={icon_name} />
 				<Icon className="fa fa-arrow-down mark" isSize="medium" />
 			</div>
