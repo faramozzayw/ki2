@@ -17,7 +17,7 @@ import useDarkMode from "use-dark-mode";
 
 import { News } from "./../../types";
 
-import "./index.sass";
+import "./index.css";
 
 const toPreviewText = (
 	str = "",
@@ -30,7 +30,7 @@ const NewsPreview: React.FC<News> = ({ title, date, path, html }) => {
 	const { value: DarkModeOn } = useDarkMode();
 
 	return (
-		<div className="NewsPreview">
+		<div id="NewsPreview">
 			<Card>
 				<CardHeader>
 					<CardHeaderTitle>
