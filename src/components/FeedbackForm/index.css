@@ -1,0 +1,14 @@
+.modal-card * {
+	background: var(--dark-mode-bg);
+}
+
+.modal-card .modal-card-title,
+.modal-card label {
+	color: var(--dark-mode-text-color) !important;
+}
+
+.modal-card input::placeholder,
+.modal-card select::placeholder,
+.modal-card textarea::placeholder {
+	filter: invert(1);
+}

@@ -5,6 +5,8 @@ import useDarkMode from "use-dark-mode";
 
 import { FeedbackForm } from "./../index";
 
+import "./index.css";
+
 const AppFooter: React.FC = () => {
 	const { toggle } = useDarkMode();
 

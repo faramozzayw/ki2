@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 
 import "./all.sass";
+import "./index.css";
 
 import { Hero, HeroHeader, HeroBody } from "bloomer";
 import { Header as AppHeader, Footer as AppFooter } from "../components";
