@@ -1,14 +1,18 @@
-.modal-card * {
+.dark-mode .modal-card * {
 	background: var(--dark-mode-bg);
 }
 
-.modal-card .modal-card-title,
-.modal-card label {
+.dark-mode .modal-card .modal-card-title {
+	color: var(--dark-mode-title-color) !important;
+	font-weight: bold;
+}
+
+.dark-mode .modal-card label {
 	color: var(--dark-mode-text-color) !important;
 }
 
-.modal-card input::placeholder,
-.modal-card select::placeholder,
-.modal-card textarea::placeholder {
+.dark-mode .modal-card input::placeholder,
+.dark-mode .modal-card select::placeholder,
+.dark-mode .modal-card textarea::placeholder {
 	filter: invert(1);
 }

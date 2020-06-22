@@ -1,7 +1,3 @@
-#NewsPreview {
-	--dark-mode-title-color: #00d1b2;
-}
-
 #NewsPreview .card {
 	margin-block-start: 2vmax;
 	margin-block-end: 2vmax;
