@@ -25,8 +25,8 @@ const Head = ({ pathname = "" }) => {
 	const pageMeta = findMetaByPath(process(menu))(pathname);
 
 	const seo = {
-		title: pageMeta.title ?? defaultTitle,
-		description: pageMeta.description ?? defaultDescription,
+		title: pageMeta?.title ?? defaultTitle,
+		description: pageMeta?.description ?? defaultDescription,
 		url: `${siteUrl}${pathname}`,
 	};
 
