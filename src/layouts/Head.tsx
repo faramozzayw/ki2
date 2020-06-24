@@ -22,18 +22,18 @@ const Head = ({ pathname = "" }) => {
 		titleTemplate,
 	} = site.siteMetadata as SiteMetadata;
 
-	const { title, description } = findMetaByPath(process(menu))(pathname);
+	const pageMeta = findMetaByPath(process(menu))(pathname);
 
 	const seo = {
-		title: title ?? defaultTitle,
-		description: description ?? defaultDescription,
+		title: pageMeta.title ?? defaultTitle,
+		description: pageMeta.description ?? defaultDescription,
 		url: `${siteUrl}${pathname}`,
 	};
 
 	return (
 		<Helmet title={seo.title} titleTemplate={titleTemplate}>
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-			<meta name="description" content={description} />
+			<meta name="description" content={seo.description} />
 
 			{seo.url && <meta property="og:url" content={seo.url} />}
 			{seo.title && <meta property="og:title" content={seo.title} />}
