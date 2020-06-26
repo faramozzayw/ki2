@@ -24,11 +24,12 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
 	return (
 		<>
 			<SEO pathname={location.pathname} />
-			<Hero isFullHeight isColor={darkMode.value ? "dark" : "light"}>
-				<HeroHeader>
-					<AppHeader />
-				</HeroHeader>
-
+			<AppHeader />
+			<Hero
+				isFullHeight
+				isColor={darkMode.value ? "dark" : "light"}
+				className="layout"
+			>
 				<HeroBody
 					id={location.pathname === "/" ? "sky" : ""}
 					className="main-content"
