@@ -1,15 +1,14 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 
 import "./all.sass";
 import "./index.css";
 
-import { Hero, HeroHeader, HeroBody } from "bloomer";
+import { Hero, HeroBody } from "bloomer";
 import { Header as AppHeader, Footer as AppFooter } from "../components";
 
 import SEO from "./SEO";
 
 import { Location } from "./../types/index";
-import { toggleIsLoading } from "../components/FeedbackForm/store/action";
 
 import useDarkMode from "use-dark-mode";
 

@@ -5,7 +5,6 @@ import {
 	NavbarMenu,
 	NavbarBurger,
 	NavbarBrand,
-	NavbarDropdown,
 	NavbarEnd,
 	NavbarItem,
 } from "bloomer";
@@ -14,9 +13,6 @@ import "./index.sass";
 
 import classnames from "classnames";
 import useDarkMode from "use-dark-mode";
-
-import NavbarLink from "./../NavbarLink";
-import LinkDropdownGroup from "./../LinkDropdownGroup";
 
 import navbar from "./../../page_data/navbar.json";
 
