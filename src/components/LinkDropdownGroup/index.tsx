@@ -29,24 +29,22 @@ const LinkDropdownGroup: React.FC<PageMetadata> = ({
 	const [showStatus, updateShowStatus] = useState(false);
 
 	const toggleDropdown = () => updateShowStatus(!showStatus);
-	
+
 	let currentURL = false;
-	if (typeof window !== 'undefined') {
-		currentURL = window?.location?.href?.includes(path); 
+	if (typeof window !== "undefined") {
+		currentURL = window?.location?.href?.includes(path);
 	}
-	
+
 	return (
 		<NavbarItem
 			hasDropdown
 			isHoverable={false}
 			isActive={showStatus}
 			tabIndex={0}
+			onClick={toggleDropdown}
 			onKeyDown={toggleDropdown}
 		>
-			<div
-				className={`arrow ${currentURL ? "currentURL" : ""}`}
-				onClick={toggleDropdown}
-			>
+			<div className={`arrow ${currentURL ? "currentURL" : ""}`}>
 				<Item title={title} icon_name={icon_name} />
 				<Icon className="fa fa-arrow-down mark" isSize="medium" />
 			</div>
