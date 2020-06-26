@@ -10,7 +10,13 @@ import Footer from "./Footer";
 
 import FeedbackForm from "./FeedbackForm";
 
-export { process, generateNavigator, findMetaByPath } from "./Header/utils";
+export {
+	process,
+	generateNavigator,
+	findMetaByPath,
+	menuConfigToFlat,
+	createMenu,
+} from "./Header/utils";
 
 export {
 	LinkDropdownGroup,
