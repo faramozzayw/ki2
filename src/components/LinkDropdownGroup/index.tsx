@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import Link from "gatsby-link";
 import { NavbarDropdown, NavbarItem, Icon } from "bloomer";
-
-import { NavbarLink } from "./../index";
 
 import { PageMetadata } from "./../../types";
 import classnames from "classnames";
@@ -39,6 +36,7 @@ const LinkDropdownGroup: React.FC<PageMetadata> = ({
 	return (
 		<NavbarItem
 			hasDropdown
+			isHoverable={false}
 			isActive={showStatus}
 			tabIndex={0}
 			onClick={toggleDropdown}

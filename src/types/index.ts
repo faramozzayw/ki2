@@ -26,6 +26,7 @@ export interface PageConfig {
 	title: string;
 	icon_name?: string | null;
 	child?: PageConfig[] | null;
+	special?: boolean;
 }
 
 // props
