@@ -1,8 +1,6 @@
-import { menuConfigToFlat, process } from "./../../src/components";
+import { menuConfigToFlat } from "./../../src/utils";
 
 import { menu1, menu2, menu3, menu4 } from "./../mock";
-
-import { PageConfig } from "./../../src/types";
 
 describe(`test 'menuConfigToFlat' function`, () => {
 	it("test with depth = 1", () => {

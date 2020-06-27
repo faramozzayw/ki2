@@ -16,7 +16,7 @@ export {
 	findMetaByPath,
 	menuConfigToFlat,
 	createMenu,
-} from "./Header/utils";
+} from "./../utils";
 
 export {
 	LinkDropdownGroup,

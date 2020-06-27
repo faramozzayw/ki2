@@ -1,8 +1,6 @@
-import { createMenu, process, generateNavigator } from "./../../src/components";
+import { process } from "./../../src/utils";
 
 import { menu1, menu2, menu3, menu4 } from "./../mock";
-
-import { PageConfig } from "./../../src/types";
 
 describe("test proccess function", () => {
 	it("test with depth = 1", () => {

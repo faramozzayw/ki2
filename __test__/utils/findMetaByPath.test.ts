@@ -1,6 +1,6 @@
-import { findMetaByPath, process } from "./../../src/components";
+import { findMetaByPath } from "./../../src/utils";
 
-import { menu1, menu2, menu3, menu4 } from "./../mock";
+import { menu1, menu2, menu3 } from "./../mock";
 
 import { PageConfig } from "./../../src/types";
 
