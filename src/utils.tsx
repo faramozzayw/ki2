@@ -36,7 +36,7 @@ export const process = (array: PageConfig[]): PageConfig[] => {
 };
 
 export const generateNavigator = (array: any[]): any => {
-	return array.map(({ path, title, icon_name, child, special }) => {
+	return array.map(({ path, title, icon_name, child }) => {
 		if (Array.isArray(child)) {
 			return (
 				<LinkDropdownGroup
