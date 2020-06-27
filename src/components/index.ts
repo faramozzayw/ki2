@@ -1,4 +1,4 @@
-import LinkDropdownGroup from "./LinkDropdownGroup";
+export { LinkDropdownGroup } from "./LinkDropdownGroup";
 export { RawMarkdown, RawMarkdownPage } from "./RawMD";
 import NewsPreview from "./NewsPreview";
 
@@ -10,19 +10,4 @@ import Footer from "./Footer";
 
 import FeedbackForm from "./FeedbackForm";
 
-export {
-	process,
-	generateNavigator,
-	findMetaByPath,
-	menuConfigToFlat,
-	createMenu,
-} from "./../utils";
-
-export {
-	LinkDropdownGroup,
-	NewsPreview,
-	NavbarLink,
-	Header,
-	Footer,
-	FeedbackForm,
-};
+export { NewsPreview, NavbarLink, Header, Footer, FeedbackForm };

@@ -15,7 +15,14 @@
 							"path": "history",
 							"title": "Історія",
 							"icon_name": "fa fa-book fa-2x",
-							"child": null
+							"child": [
+								{
+									"path": "history",
+									"title": "Історія",
+									"icon_name": "fa fa-book fa-2x",
+									"child": null
+								}
+							]
 						}
 					]
 				}
