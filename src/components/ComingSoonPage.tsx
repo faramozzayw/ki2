@@ -6,7 +6,7 @@ import Layout from "./../layouts/Layout";
 
 import { PageWithLocation } from "./../types";
 
-const ComingSoonPage: React.FC<PageWithLocation> = ({ location }) => (
+export const ComingSoonPage: React.FC<PageWithLocation> = ({ location }) => (
 	<Layout location={location}>
 		<Message isColor="warning">
 			<MessageHeader>
@@ -27,5 +27,3 @@ const ComingSoonPage: React.FC<PageWithLocation> = ({ location }) => (
 		</Message>
 	</Layout>
 );
-
-export default ComingSoonPage;

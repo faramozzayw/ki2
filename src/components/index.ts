@@ -10,4 +10,6 @@ import Footer from "./Footer";
 
 import FeedbackForm from "./FeedbackForm";
 
+export { ComingSoonPage } from "./ComingSoonPage";
+
 export { NewsPreview, NavbarLink, Header, Footer, FeedbackForm };
