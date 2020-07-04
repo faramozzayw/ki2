@@ -1,0 +1,19 @@
+.dark-mode .modal-card header {
+	overflow-x: auto;
+}
+
+.dark-mode .modal-card button.delete {
+	filter: invert(1);
+}
+
+.dark-mode .modal-card * {
+	background: var(--dark-mode-bg);
+}
+
+.dark-mode .modal-card label {
+	color: var(--dark-mode-text-color) !important;
+}
+
+.dark-mode .modal-card .field *::placeholder {
+	filter: invert(1);
+}

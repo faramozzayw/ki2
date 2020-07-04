@@ -1,0 +1,15 @@
+:root {
+	--dark-mode-title-color: #00d1b2;
+	--dark-mode-bg: #404040;
+	--dark-mode-text-color: #dbdbdb;
+}
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+	color: var(--dark-mode-text-color) !important;
+}
+
+.layout {
+	padding-top: calc(5rem - 5vh);
+}

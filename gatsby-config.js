@@ -1,11 +1,24 @@
 module.exports = {
 	siteMetadata: {
-        title: 'Київський авіаційний технікум',
-        siteUrl: `https://kiat.now.sh/`,
+		defaultTitle: "Київський авіаційний технікум",
+		defaultDescription: `Київський авіаційний технікум`,
+		siteUrl: `https://kiat.now.sh/`,
+		titleTemplate: "Київський авіаційний технікум · %s",
 	},
 	plugins: [
-		'gatsby-plugin-react-helmet',
-		'gatsby-plugin-sass',
+		`gatsby-plugin-react-helmet`,
+		`gatsby-plugin-preact`,
+		`gatsby-plugin-sitemap`,
+		`gatsby-plugin-robots-txt`,
+		`gatsby-plugin-sass`,
+		`gatsby-plugin-typescript`,
+		`gatsby-plugin-use-dark-mode`,
+		{
+			resolve: `gatsby-plugin-env-variables`,
+			options: {
+				whitelist: ["REACT_APP_AUTH_TOKEN"],
+			},
+		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -26,30 +39,30 @@ module.exports = {
 			options: {
 				plugins: [
 					`@pauliescanlon/gatsby-remark-sticky-table`,
-					`gatsby-remark-copy-linked-files`, 
+					`gatsby-remark-copy-linked-files`,
 					{
-         		resolve: `gatsby-remark-images`,
-         		options: {
-           		maxWidth: 590,
-         		}
+						resolve: `gatsby-remark-images`,
+						options: {
+							maxWidth: 590,
+						},
 					},
-				]
+				],
 			},
 		},
 		{
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Київський авіаційний технікум`,
-        short_name: `КіАТ`,
+			resolve: `gatsby-plugin-manifest`,
+			options: {
+				name: `Київський авіаційний технікум`,
+				short_name: `КіАТ`,
 				description: `Київський авіаційний технікум - вищий навчальний заклад I рівня акредитації.`,
 				lang: `uk_UA`,
 				icon: `src/media/logo1.png`,
-        start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
-        display: `standalone`,
-      },
-    },
-        `gatsby-plugin-offline`,
+				start_url: `/`,
+				background_color: `#f7f0eb`,
+				theme_color: `#a2466c`,
+				display: `standalone`,
+			},
+		},
+		`gatsby-plugin-offline`,
 	],
 };
