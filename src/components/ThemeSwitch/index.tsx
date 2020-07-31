@@ -1,9 +1,9 @@
 import React from "react";
-
-import "./index.css";
 import useDarkMode from "use-dark-mode";
 
-const ThemeSwitch = ({}) => {
+import "./index.css";
+
+const ThemeSwitch = () => {
 	const { toggle, value } = useDarkMode();
 
 	return (
