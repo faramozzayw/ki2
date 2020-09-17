@@ -4,10 +4,10 @@ import { ModalCardFooter, Button, Help } from "bloomer";
 import { ResponseStatusOK } from "./../store/types";
 
 export interface FeedbackFormFooterProps {
-	cancelHandler: () => void;
-	errorStatus: boolean;
-	isLoading: boolean;
-	responseStatusOK: ResponseStatusOK;
+	cancelHandler?: () => void;
+	errorStatus?: boolean;
+	isLoading?: boolean;
+	responseStatusOK?: ResponseStatusOK;
 	darkmode?: boolean;
 }
 
