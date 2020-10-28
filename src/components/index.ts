@@ -15,3 +15,4 @@ export {
 } from "./FeedbackForm";
 
 export { default as ComingSoonPage } from "./ComingSoonPage";
+export { default as Discord } from "./Discord";

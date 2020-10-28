@@ -6,6 +6,7 @@ import GoogleMapsLocation from "./../components/GoogleMapsLocation";
 import Layout from "./../layouts/Layout";
 
 import { PageWithLocation } from "./../types";
+import { Discord } from "../components";
 
 const Contacts: React.FC<PageWithLocation> = ({ location }) => (
 	<Layout location={location}>
@@ -34,6 +35,9 @@ const Contacts: React.FC<PageWithLocation> = ({ location }) => (
 				</p>
 
 				<GoogleMapsLocation />
+				<br />
+				<br />
+				<Discord />
 			</Content>
 		</Container>
 	</Layout>
