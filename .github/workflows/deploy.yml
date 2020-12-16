@@ -47,6 +47,7 @@ jobs:
           script_stop: true
           envs: SKIP_FILES,TARGET_DIR
           script: |
+            export TEST=$TEST
             echo $TEST
             cd ~/$TARGET_DIR
             pwd
