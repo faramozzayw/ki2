@@ -29,4 +29,5 @@ jobs:
             echo $TEST
             echo $TARGET_DIR
             echo $SKIP_FILES
+            printf "%s" $(echo $TARGET_DIR)
             printf "! -name %s " $(echo $SKIP_FILES)
