@@ -27,6 +27,7 @@ jobs:
           envs: SKIP_FILES,TARGET_DIR,TEST
           script: |
             echo $TEST
-            echo $env:TARGET_DIR
+            echo $TARGET_DIR
             echo $SKIP_FILES
-            printf "! -name %s " $(echo $SKIP_FILES)
+            export _T=printf "! -name %s " $(echo $SKIP_FILES)
+            echo $_T
