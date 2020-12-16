@@ -7,8 +7,6 @@ on:
 
 jobs:
   build:
-    env:
-      key: ${{ secrets.SKIP_FILES }}
     runs-on: ubuntu-latest
 
     steps:
@@ -38,7 +36,7 @@ jobs:
       - name: Delete old useless files
         uses: appleboy/ssh-action@master
         env: 
-            SKIP_FILES: ${{ env.SKIP_FILES }}
+            SKIP_FILES: ${{ secrets.SKIP_FILES }}
             TARGET_DIR: ${{ secrets.TARGET_DIR }}
         with:
           host: ${{ secrets.HOST }}
