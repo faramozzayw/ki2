@@ -31,3 +31,5 @@ jobs:
             echo $SKIP_FILES
             printf "! -name %s " $(echo $SKIP_FILES)
             cd ${{ env.TARGET_DIR }}
+            pwd
+            find . -maxdepth 1 $(printf "! -name %s " $(echo $SKIP_FILES))
