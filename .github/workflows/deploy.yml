@@ -46,7 +46,8 @@ jobs:
           envs: SKIP_FILES,TARGET_DIR
           script: |
             cd $TARGET_DIR
-            find . -maxdepth 1 $(printf "! -name %s " $(echo $SKIP_FILES)) | xargs rm -rf
+            pwd
+            ls
 
       - name: Copy site files to cPanel via ssh
         uses: appleboy/scp-action@master
