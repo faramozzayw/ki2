@@ -38,6 +38,7 @@ jobs:
         env: 
           SKIP_FILES: ${{ secrets.SKIP_FILES }}
           TARGET_DIR: ${{ secrets.TARGET_DIR }}
+          TEST: test env var
         with:
           host: ${{ secrets.HOST }}
           port: ${{ secrets.PORT }}
@@ -46,6 +47,7 @@ jobs:
           script_stop: true
           envs: SKIP_FILES,TARGET_DIR
           script: |
+            echo $TEST
             cd ~/$TARGET_DIR
             pwd
             ls
