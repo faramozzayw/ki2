@@ -27,4 +27,6 @@ jobs:
           envs: SKIP_FILES,TARGET_DIR,TEST
           script: |
             echo "$TEST"
+            echo "$TARGET_DIR"
+            echo "$SKIP_FILES"
             echo "test"
