@@ -46,6 +46,7 @@ jobs:
           envs: SKIP_FILES,TARGET_DIR
           script: |
             cd $TARGET_DIR
+            echo $TARGET_DIR
             pwd
             ls
 
