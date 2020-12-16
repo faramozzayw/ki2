@@ -3,7 +3,7 @@ name: Deploy to cPanel
 on:
   push:
     branches:
-      - ci-patch
+      - ci-patch-1
 
 jobs:
   build:
