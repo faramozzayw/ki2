@@ -7,9 +7,6 @@ on:
 
 jobs:
   build:
-    env:
-      SKIP_FILES: ${{ secrets.SKIP_FILES }}
-      TARGET_DIR: ${{ secrets.TARGET_DIR }}
     runs-on: ubuntu-latest
 
     steps:
@@ -39,16 +36,17 @@ jobs:
       - name: Delete old useless files
         uses: appleboy/ssh-action@master
         env: 
-            SKIP_FILES: ${{ env.SKIP_FILES }}
-            TARGET_DIR: ${{ env.TARGET_DIR }}
+          SKIP_FILES: ${{ secrets.SKIP_FILES }}
+          TARGET_DIR: ${{ secrets.TARGET_DIR }}
         with:
           host: ${{ secrets.HOST }}
           port: ${{ secrets.PORT }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
+          script_stop: true
           envs: SKIP_FILES,TARGET_DIR
           script: |
-            cd $TARGET_DIR
+            cd ~/public_html
             echo $TARGET_DIR
             pwd
             ls
