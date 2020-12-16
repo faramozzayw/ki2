@@ -49,6 +49,7 @@ jobs:
           script: |
             export TEST=$TEST
             echo $TEST
+            echo "test"
             cd ~/$TARGET_DIR
             pwd
             ls
