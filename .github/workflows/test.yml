@@ -27,5 +27,5 @@ jobs:
           script: |
             printf "! -name %s " $(echo ${{ env.SKIP_FILES }})
             cd ${{ env.TARGET_DIR }}
-            find . -maxdepth 1 .artifact | xargs rm
+            find . -maxdepth 1 -name .artifact | xargs rm
             touch .artifact2
