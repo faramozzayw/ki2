@@ -17,7 +17,7 @@ jobs:
         env: 
           SKIP_FILES: ${{ secrets.SKIP_FILES }}
           TARGET_DIR: ${{ secrets.TARGET_DIR }}
-          FAKE_TARGET_DIR: ~/fake_public_html
+          FAKE_TARGET_DIR: ${{ secrets.FAKE_TARGET_DIR }}
         with:
           host: ${{ secrets.HOST }}
           port: ${{ secrets.PORT }}
@@ -28,5 +28,5 @@ jobs:
           script: |
             printf "! -name %s " $(echo ${{ env.SKIP_FILES }})
             cd ${{ env.FAKE_TARGET_DIR }}
-            find . -maxdepth 1 $(printf "! -name %s " $(echo ${{ env.SKIP_FILES }})) ! -name . ! -name ..  | xargs rm -rf
+            find . -maxdepth 1 $(printf "! -name %s " $(echo ${{ env.SKIP_FILES }})) ! -name . ! -name .. 
             touch .artifact
