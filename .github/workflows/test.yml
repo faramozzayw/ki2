@@ -26,6 +26,6 @@ jobs:
           envs: SKIP_FILES,TARGET_DIR,TEST
           script: |
             printf "! -name %s " $(echo ${{ env.SKIP_FILES }})
-            cd ${{ env.TARGET_DIR }}
-            find . -maxdepth 1 -name .artifact | xargs rm
-            touch .artifact2
+            cd ~/fake_public_html
+            find . -maxdepth 1 $(printf "! -name %s " $(echo ${{ env.SKIP_FILES }})) ! -name . ! -name ..  | xargs rm -rf
+            touch .artifact
