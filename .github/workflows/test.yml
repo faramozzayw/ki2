@@ -26,5 +26,4 @@ jobs:
           script_stop: true
           envs: SKIP_FILES,TARGET_DIR,FAKE_TARGET_DIR
           script: |
-            cd ${{ env.FAKE_TARGET_DIR }}
-            find . -maxdepth 1 $(printf "! -name %s " $(echo ${{ env.SKIP_FILES }})) ! -name . ! -name ..  | xargs rm -rf
+            find ${{ env.FAKE_TARGET_DIR }} -maxdepth 1 $(printf "! -name %s " $(echo ${{ env.SKIP_FILES }})) ! -name . ! -name ..
